@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const SHEET_ID = '1UMBAu-pjebifQEEjpvXlLzlgTleEUUNGfcm_FquCNHg';
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzh6hdqOQBaoJdIi60-RxZsQrKFFNQyipDGTLuiT8JHCD5y4ygw8IkTMYZ4x6-LR7ChsQ/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwuAvoUssscWOrloauaSvau85YN4AIGytdqn-aGktGds7PpDrZfHZD15u07UxxubAiDow/exec';
 const SHEET_NAME = 'Linette se 56e verjaarsdag';
 
 app.get('/api/entries', async (req, res) => {
@@ -48,7 +48,7 @@ app.post('/api/entries', async (req, res) => {
     const url = SCRIPT_URL + '?' + params.toString();
     const r = await fetch(url, { redirect: 'follow' });
     const text = await r.text();
-    console.log('Apps Script response:', text.substring(0, 200));
+    console.log('Apps Script response:', text.substring(0, 300));
     let result;
     try { result = JSON.parse(text); }
     catch(e) { result = { status: 'ok' }; }
