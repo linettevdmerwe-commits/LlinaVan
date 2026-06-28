@@ -18,23 +18,16 @@ body{background:#0d0a1a;font-family:'Lato',sans-serif}
 .map-wrap img{width:100%;border-radius:8px;border:2px solid #fcb045;display:block;margin:0 auto}
 .tabs{display:flex;gap:3px;margin-top:12px;flex-wrap:wrap}
 .tab{flex:1;min-width:70px;padding:11px 4px;font-family:'Special Elite',cursive;font-size:.75rem;border:none;cursor:pointer;border-radius:4px 4px 0 0;transition:all .2s;color:#f0e6ff}
-.tab.add-tab{background:#0e6655}
-.tab.pass-tab{background:#8b1a3a}
-.tab.music-tab{background:#1a3a6a}
-.tab.map-tab{background:#6a1a6a}
-.tab.active{filter:brightness(1.5);transform:translateY(-2px)}
-.tab:not(.active){filter:brightness(.6)}
+.tab.add-tab{background:#0e6655}.tab.pass-tab{background:#8b1a3a}.tab.music-tab{background:#1a3a6a}.tab.map-tab{background:#6a1a6a}
+.tab.active{filter:brightness(1.5);transform:translateY(-2px)}.tab:not(.active){filter:brightness(.6)}
 .panel{background:#1a1030;border:2px solid #6a3d9a;border-radius:0 0 4px 4px;padding:20px}
 .stats{display:flex;gap:16px;flex-wrap:wrap;padding:10px 0 14px;border-bottom:1px dashed #6a3d9a;margin-bottom:16px}
-.stat{font-family:'Special Elite',cursive;font-size:.8rem;color:#b39dce}
-.stat strong{color:#fcb045;font-size:1rem}
+.stat{font-family:'Special Elite',cursive;font-size:.8rem;color:#b39dce}.stat strong{color:#fcb045;font-size:1rem}
 .section-h2{font-family:'Playfair Display',serif;color:#e87ab0;font-size:1rem;margin-bottom:10px;font-style:italic}
 .claimed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:20px}
 .chip{background:#231040;border:1px solid #6a3d9a;border-radius:4px;padding:9px 12px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:background .15s}
-.chip:hover{background:#2e1560}
-.chip .flag{font-size:1.3rem}
-.chip-info{flex:1;min-width:0}
-.chip-name{font-weight:700;color:#f0e6ff;font-size:.83rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip:hover{background:#2e1560}.chip .flag{font-size:1.3rem}
+.chip-info{flex:1;min-width:0}.chip-name{font-weight:700;color:#f0e6ff;font-size:.83rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chip-sub{font-family:'Special Elite',cursive;color:#b39dce;font-size:.72rem}
 .badge-kos{font-size:.7rem;padding:2px 6px;border-radius:10px;background:#5c1a3a;color:#ffb3d1}
 .badge-drank{font-size:.7rem;padding:2px 6px;border-radius:10px;background:#1a2a5c;color:#a3c4f7}
@@ -43,84 +36,58 @@ body{background:#0d0a1a;font-family:'Lato',sans-serif}
 .pcard{border:1px solid #6a3d9a;border-radius:4px;overflow:hidden;background:#231040;cursor:pointer;position:relative;transition:transform .2s;box-shadow:0 4px 16px rgba(131,58,180,.25)}
 .pcard:hover{transform:translateY(-3px)}
 .pcard-head{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px dashed #6a3d9a}
-.pcard-head.kos{background:linear-gradient(90deg,#7b1a3a,#c0392b)}
-.pcard-head.drank{background:linear-gradient(90deg,#4a1a7a,#833ab4)}
-.pcard-head.beide{background:linear-gradient(90deg,#1a4a2a,#0e6655)}
-.pcard-flag{font-size:2rem}
-.pcard-head-text h3{font-family:'Playfair Display',serif;color:#fff;font-size:.95rem}
-.pcard-head-text p{color:rgba(255,255,255,.72);font-size:.75rem}
-.pcard-body{padding:12px 14px}
-.pcard-label{font-family:'Special Elite',cursive;color:#b39dce;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.pcard-head.kos{background:linear-gradient(90deg,#7b1a3a,#c0392b)}.pcard-head.drank{background:linear-gradient(90deg,#4a1a7a,#833ab4)}.pcard-head.beide{background:linear-gradient(90deg,#1a4a2a,#0e6655)}
+.pcard-flag{font-size:2rem}.pcard-head-text h3{font-family:'Playfair Display',serif;color:#fff;font-size:.95rem}.pcard-head-text p{color:rgba(255,255,255,.72);font-size:.75rem}
+.pcard-body{padding:12px 14px}.pcard-label{font-family:'Special Elite',cursive;color:#b39dce;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
 .pcard-value{color:#f0e6ff;font-size:.85rem;margin-bottom:8px}
 .pcard-memory{background:#2e1560;border-left:3px solid #fcb045;padding:7px 9px;font-style:italic;font-size:.8rem;color:#e0d0ff;border-radius:0 3px 3px 0;line-height:1.5;margin-bottom:6px}
 .pcard-music{font-size:.78rem;color:#fcb045;font-style:italic;margin-top:4px}
 .pcard-stamp{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transform:rotate(15deg);border:2px solid;opacity:.85}
-.stamp-kos{border-color:#e87ab0;color:#e87ab0;background:rgba(232,122,176,.1)}
-.stamp-drank{border-color:#b39dce;color:#b39dce;background:rgba(179,157,206,.1)}
-.stamp-beide{border-color:#fcb045;color:#fcb045;background:rgba(252,176,69,.1)}
+.stamp-kos{border-color:#e87ab0;color:#e87ab0;background:rgba(232,122,176,.1)}.stamp-drank{border-color:#b39dce;color:#b39dce;background:rgba(179,157,206,.1)}.stamp-beide{border-color:#fcb045;color:#fcb045;background:rgba(252,176,69,.1)}
 .music-intro{font-family:'Playfair Display',serif;font-style:italic;color:#e87ab0;font-size:.95rem;margin-bottom:16px;border-bottom:1px dashed #6a3d9a;padding-bottom:12px}
 .playlist{display:flex;flex-direction:column;gap:10px}
 .track-row{background:#231040;border:1px solid #6a3d9a;border-radius:4px;padding:12px 14px;display:flex;align-items:center;gap:12px}
-.track-num{font-family:'Special Elite',cursive;font-size:1.1rem;color:#fcb045;min-width:28px}
-.track-flag{font-size:1.5rem}
-.track-info{flex:1;min-width:0}
-.track-song{font-weight:700;color:#f0e6ff;font-size:.88rem}
-.track-artist{font-family:'Special Elite',cursive;color:#b39dce;font-size:.75rem}
-.track-guest{font-size:.72rem;color:#fcb045;margin-top:2px}
+.track-num{font-family:'Special Elite',cursive;font-size:1.1rem;color:#fcb045;min-width:28px}.track-flag{font-size:1.5rem}
+.track-info{flex:1;min-width:0}.track-song{font-weight:700;color:#f0e6ff;font-size:.88rem}.track-artist{font-family:'Special Elite',cursive;color:#b39dce;font-size:.75rem}.track-guest{font-size:.72rem;color:#fcb045;margin-top:2px}
 .track-links{display:flex;gap:6px;flex-shrink:0}
 .track-link{display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:3px;font-size:.72rem;font-family:'Special Elite',cursive;text-decoration:none}
-.link-youtube{background:#c0392b;color:white}
-.link-spotify{background:#1db954;color:white}
-.link-plain{background:#833ab4;color:#fcb045}
+.link-youtube{background:#c0392b;color:white}.link-spotify{background:#1db954;color:white}.link-plain{background:#833ab4;color:#fcb045}
 .form-title{font-family:'Playfair Display',serif;color:#fcb045;font-size:1.2rem;margin-bottom:6px;border-bottom:1px dashed #6a3d9a;padding-bottom:10px}
 .form-sub{font-family:'Special Elite',cursive;color:#b39dce;font-size:.78rem;margin-bottom:16px;font-style:italic}
-.field{margin-bottom:14px}
-.field label{display:block;font-family:'Special Elite',cursive;color:#b39dce;font-size:.8rem;letter-spacing:1px;margin-bottom:5px}
+.field{margin-bottom:14px}.field label{display:block;font-family:'Special Elite',cursive;color:#b39dce;font-size:.8rem;letter-spacing:1px;margin-bottom:5px}
 .field input,.field textarea{width:100%;padding:9px 13px;background:#231040;border:1px solid #6a3d9a;border-radius:4px;font-family:'Lato',sans-serif;font-size:.88rem;color:#f0e6ff;outline:none;transition:border-color .2s}
 .field input:focus,.field textarea:focus{border-color:#fcb045}
 .field input::placeholder,.field textarea::placeholder{color:#6a4a8a}
-.field textarea{resize:vertical;min-height:70px}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field textarea{resize:vertical;min-height:70px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field-hint{font-size:.73rem;color:#b39dce;margin-top:4px;font-style:italic}
 .section-divider{font-family:'Playfair Display',serif;font-style:italic;color:#fcb045;font-size:.88rem;margin:18px 0 12px;display:flex;align-items:center;gap:8px}
 .section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:#6a3d9a;opacity:.6}
-.kat-row{display:flex;gap:10px}
-.kat-opt{flex:1}
-.kat-opt input[type=checkbox]{display:none}
+.kat-row{display:flex;gap:10px}.kat-opt{flex:1}.kat-opt input[type=checkbox]{display:none}
 .kat-opt label{display:block;text-align:center;padding:10px;border:2px solid #6a3d9a;border-radius:4px;cursor:pointer;transition:all .2s;font-size:.88rem;color:#b39dce}
 .kat-opt input[type=checkbox]:checked+.lbl-kos{background:#c0392b;color:white;border-color:#c0392b}
 .kat-opt input[type=checkbox]:checked+.lbl-drank{background:#833ab4;color:white;border-color:#833ab4}
 .music-pair{background:#1a0a2e;border:1px solid #6a3d9a;border-radius:4px;padding:12px;margin-bottom:12px}
 .music-pair-title{font-family:'Special Elite',cursive;color:#fcb045;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:block}
 .warning-box{background:#2a1a00;border:1px solid #fcb045;border-radius:4px;padding:10px 14px;font-size:.85rem;color:#ffe0a0;margin-bottom:14px}
-.warning-box strong{display:block;margin-bottom:4px;color:#fcb045}
 .taken-list{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
 .taken-chip{background:#2e1560;border:1px solid #833ab4;border-radius:12px;padding:3px 10px;font-size:.75rem;color:#e0d0ff;font-family:'Special Elite',cursive}
 .submit-btn{width:100%;padding:13px;background:#833ab4;color:#fcb045;border:none;border-radius:4px;font-family:'Special Elite',cursive;font-size:.95rem;letter-spacing:2px;cursor:pointer;margin-top:6px;transition:background .2s}
-.submit-btn:hover{background:#9b45cc}
-.submit-btn:disabled{background:#3a2a4a;color:#6a5a7a;cursor:not-allowed}
+.submit-btn:hover{background:#9b45cc}.submit-btn:disabled{background:#3a2a4a;color:#6a5a7a;cursor:not-allowed}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#833ab4;color:#fcb045;font-family:'Special Elite',cursive;padding:12px 24px;border-radius:4px;font-size:.9rem;letter-spacing:1px;z-index:999;border:1px solid #fcb045}
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
 .modal{background:#1a1030;border:3px double #fcb045;border-radius:4px;max-width:480px;width:100%;overflow:hidden;max-height:90vh;overflow-y:auto}
 .modal-head{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0}
-.modal-head.kos{background:linear-gradient(90deg,#7b1a3a,#c0392b)}
-.modal-head.drank{background:linear-gradient(90deg,#4a1a7a,#833ab4)}
-.modal-head.beide{background:linear-gradient(90deg,#1a4a2a,#0e6655)}
-.modal-head h3{font-family:'Playfair Display',serif;color:#fcb045}
-.modal-close{background:none;border:none;color:white;font-size:1.3rem;cursor:pointer}
-.modal-body{padding:22px}
-.modal-flag{font-size:3rem;text-align:center;display:block;margin-bottom:14px}
-.modal-row{margin-bottom:10px}
-.modal-lbl{font-family:'Special Elite',cursive;color:#b39dce;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.modal-head.kos{background:linear-gradient(90deg,#7b1a3a,#c0392b)}.modal-head.drank{background:linear-gradient(90deg,#4a1a7a,#833ab4)}.modal-head.beide{background:linear-gradient(90deg,#1a4a2a,#0e6655)}
+.modal-head h3{font-family:'Playfair Display',serif;color:#fcb045}.modal-close{background:none;border:none;color:white;font-size:1.3rem;cursor:pointer}
+.modal-body{padding:22px}.modal-flag{font-size:3rem;text-align:center;display:block;margin-bottom:14px}
+.modal-row{margin-bottom:10px}.modal-lbl{font-family:'Special Elite',cursive;color:#b39dce;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
 .modal-val{color:#f0e6ff;font-size:.92rem}
 .modal-memory{background:#2e1560;border-left:4px solid #fcb045;padding:10px 13px;font-style:italic;color:#e0d0ff;line-height:1.6;font-size:.88rem;border-radius:0 4px 4px 0;margin-top:12px}
 .modal-music-box{margin-top:14px;background:#1a0a2e;border:1px solid #fcb045;border-radius:4px;padding:12px 14px}
 .modal-music-title{font-family:'Special Elite',cursive;color:#fcb045;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:8px}
 .modal-music-item{margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed #6a3d9a}
 .modal-music-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.modal-music-name{font-weight:700;color:#f0e6ff;font-size:.92rem}
-.modal-music-artist{color:#b39dce;font-size:.82rem}
-.modal-music-links{margin-top:4px}
+.modal-music-name{font-weight:700;color:#f0e6ff;font-size:.92rem}.modal-music-artist{color:#b39dce;font-size:.82rem}.modal-music-links{margin-top:4px}
 .modal-deco{text-align:center;margin-top:14px;font-size:1.4rem;opacity:.3;letter-spacing:6px}
 @media(max-width:560px){.field-row{grid-template-columns:1fr}.claimed-grid{grid-template-columns:1fr}.kat-row{flex-direction:column}}
 </style>
@@ -162,8 +129,8 @@ body{background:#0d0a1a;font-family:'Lato',sans-serif}
   </div>
 </div>
 <div class="toast" id="toast" style="display:none"></div>
-
 <script>
+
 let entries = [];
 let currentTab = 'add';
 
@@ -173,7 +140,13 @@ async function loadEntries() {
     const data = await r.json();
     entries = Array.isArray(data) ? data : [];
   } catch(e) { entries = []; }
-  renderPanel();
+  // Only re-render add tab if it hasn't been drawn yet
+  if (currentTab !== 'add' || !document.getElementById('f-naam')) {
+    renderPanel();
+  } else {
+    // Just update the warning box without wiping the form
+    updateWarnBox();
+  }
 }
 
 async function saveEntry(entry) {
@@ -189,8 +162,8 @@ async function saveEntry(entry) {
 function showTab(tab) {
   currentTab = tab;
   document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-  const m = {add:'add-tab',passport:'pass-tab',music:'music-tab',map:'map-tab'};
-  document.querySelector('.'+m[tab]).classList.add('active');
+  const m = {add:'add-tab', passport:'pass-tab', music:'music-tab', map:'map-tab'};
+  document.querySelector('.' + m[tab]).classList.add('active');
   renderPanel();
 }
 
@@ -200,7 +173,7 @@ function showToast(msg) {
   t.textContent = msg;
   t.style.display = 'block';
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.style.display='none', 3500);
+  toastTimer = setTimeout(() => t.style.display = 'none', 3500);
 }
 
 function kat(e) {
@@ -212,208 +185,216 @@ function kat(e) {
 function musicLink(url, label) {
   if (!url) return '';
   const l = url.toLowerCase();
-  const t = l.includes('youtube')||l.includes('youtu.be') ? 'youtube' : l.includes('spotify') ? 'spotify' : 'plain';
-  const cls = {youtube:'link-youtube',spotify:'link-spotify',plain:'link-plain'};
-  const ico = {youtube:'▶',spotify:'♫',plain:'🔗'};
-  return `<a href="${url}" target="_blank" class="track-link ${cls[t]}">${ico[t]} ${label||'Luister'}</a>`;
+  const t = l.includes('youtube') || l.includes('youtu.be') ? 'youtube' : l.includes('spotify') ? 'spotify' : 'plain';
+  const cls = {youtube:'link-youtube', spotify:'link-spotify', plain:'link-plain'};
+  const ico = {youtube:'▶', spotify:'♫', plain:'🔗'};
+  return '<a href="' + url + '" target="_blank" class="track-link ' + cls[t] + '">' + ico[t] + ' ' + (label||'Luister') + '</a>';
 }
 
 function openModal(idx) {
   const e = entries[idx];
   const k = kat(e);
-  document.getElementById('modal-head').className = 'modal-head '+k;
-  document.getElementById('modal-title').textContent = (e.vlag||'🌍')+' '+e.land;
-  document.getElementById('modal-flag').textContent = e.vlag||'🌍';
+  document.getElementById('modal-head').className = 'modal-head ' + k;
+  document.getElementById('modal-title').textContent = (e.vlag||'🌍') + ' ' + e.land;
+  document.getElementById('modal-flag').textContent = e.vlag || '🌍';
   document.getElementById('modal-naam').textContent = e.naam;
   document.getElementById('modal-land').textContent = e.land;
   const kr = document.getElementById('modal-kos-row');
   const dr = document.getElementById('modal-drank-row');
-  if (e.kosItem) { document.getElementById('modal-kos').textContent=e.kosItem; kr.style.display=''; } else kr.style.display='none';
-  if (e.drankItem) { document.getElementById('modal-drank').textContent=e.drankItem; dr.style.display=''; } else dr.style.display='none';
+  if (e.kosItem) { document.getElementById('modal-kos').textContent = e.kosItem; kr.style.display = ''; } else kr.style.display = 'none';
+  if (e.drankItem) { document.getElementById('modal-drank').textContent = e.drankItem; dr.style.display = ''; } else dr.style.display = 'none';
   const jr = document.getElementById('modal-jaar-row');
-  if (e.jaar) { document.getElementById('modal-jaar').textContent=e.jaar; jr.style.display=''; } else jr.style.display='none';
+  if (e.jaar) { document.getElementById('modal-jaar').textContent = e.jaar; jr.style.display = ''; } else jr.style.display = 'none';
   const mem = document.getElementById('modal-memory');
-  if (e.herinnering) { mem.textContent='"'+e.herinnering+'"'; mem.style.display=''; } else mem.style.display='none';
+  if (e.herinnering) { mem.textContent = '"' + e.herinnering + '"'; mem.style.display = ''; } else mem.style.display = 'none';
   const songs = [];
-  if (e.liedjie1) songs.push({n:e.liedjie1,a:e.artis1,u:e.skakel1});
-  if (e.liedjie2) songs.push({n:e.liedjie2,a:e.artis2,u:e.skakel2});
+  if (e.liedjie1) songs.push({n:e.liedjie1, a:e.artis1, u:e.skakel1});
+  if (e.liedjie2) songs.push({n:e.liedjie2, a:e.artis2, u:e.skakel2});
   const mbox = document.getElementById('modal-music');
   if (songs.length) {
-    document.getElementById('modal-songs').innerHTML = songs.map(s=>`
-      <div class="modal-music-item">
-        <div class="modal-music-name">${s.n}</div>
-        ${s.a?`<div class="modal-music-artist">— ${s.a}</div>`:''}
-        <div class="modal-music-links">${s.u?musicLink(s.u,'Speel nou'):`<a href="https://www.youtube.com/results?search_query=${encodeURIComponent(s.n+' '+(s.a||''))}" target="_blank" class="track-link link-youtube">▶ Soek</a>`}</div>
-      </div>`).join('');
-    mbox.style.display='';
-  } else mbox.style.display='none';
-  document.getElementById('entry-modal').style.display='flex';
+    document.getElementById('modal-songs').innerHTML = songs.map(function(s) {
+      return '<div class="modal-music-item"><div class="modal-music-name">' + s.n + '</div>' +
+        (s.a ? '<div class="modal-music-artist">— ' + s.a + '</div>' : '') +
+        '<div class="modal-music-links">' + (s.u ? musicLink(s.u, 'Speel nou') :
+        '<a href="https://www.youtube.com/results?search_query=' + encodeURIComponent(s.n + ' ' + (s.a||'')) + '" target="_blank" class="track-link link-youtube">▶ Soek</a>') + '</div></div>';
+    }).join('');
+    mbox.style.display = '';
+  } else mbox.style.display = 'none';
+  document.getElementById('entry-modal').style.display = 'flex';
 }
 
 function closeModal(ev) {
-  if (!ev||ev.target===document.getElementById('entry-modal'))
-    document.getElementById('entry-modal').style.display='none';
+  if (!ev || ev.target === document.getElementById('entry-modal'))
+    document.getElementById('entry-modal').style.display = 'none';
+}
+
+function updateWarnBox() {
+  const wb = document.getElementById('warn-box');
+  if (!wb) return;
+  const taken = entries.map(function(e) { return (e.vlag||'🌍') + ' ' + e.naam + ' (' + e.land + ')'; });
+  if (taken.length) {
+    wb.innerHTML = '<strong style="display:block;margin-bottom:4px;color:#fcb045">⚠️ Hierdie bestemmings is al geëis:</strong><div class="taken-list">' +
+      taken.map(function(t) { return '<span class="taken-chip">' + t + '</span>'; }).join('') + '</div>';
+    wb.style.display = '';
+  } else {
+    wb.style.display = 'none';
+  }
 }
 
 function renderPanel() {
   const p = document.getElementById('panel');
-  if (currentTab==='map') p.innerHTML=renderMap();
-  else if (currentTab==='passport') p.innerHTML=renderPassport();
-  else if (currentTab==='music') p.innerHTML=renderMusic();
-  else p.innerHTML=renderAdd();
+  if (currentTab === 'map') p.innerHTML = renderMap();
+  else if (currentTab === 'passport') p.innerHTML = renderPassport();
+  else if (currentTab === 'music') p.innerHTML = renderMusic();
+  else p.innerHTML = renderAdd();
 }
 
 function renderMap() {
-  const kos=entries.filter(e=>e.kosItem);
-  const drank=entries.filter(e=>e.drankItem);
-  const countries=new Set(entries.map(e=>e.land.toLowerCase()));
-  const songs=entries.reduce((n,e)=>n+(e.liedjie1?1:0)+(e.liedjie2?1:0),0);
-  let h=`<div class="stats">
-    <div class="stat">🌍 <strong>${countries.size}</strong> lande</div>
-    <div class="stat">🍽️ <strong>${kos.length}</strong> geregte</div>
-    <div class="stat">🥂 <strong>${drank.length}</strong> drankies</div>
-    <div class="stat">👥 <strong>${entries.length}</strong> gaste</div>
-    <div class="stat">🎵 <strong>${songs}</strong> liedjies</div>
-  </div>`;
-  if (!entries.length) return h+`<div class="empty">🌐 Nog geen reise bygevoeg nie.<br>Kliek op <strong>"Steek Jou Kleim Af"</strong> om te begin!</div>`;
+  const kos = entries.filter(function(e) { return e.kosItem; });
+  const drank = entries.filter(function(e) { return e.drankItem; });
+  const countries = new Set(entries.map(function(e) { return e.land.toLowerCase(); }));
+  const songs = entries.reduce(function(n,e) { return n + (e.liedjie1?1:0) + (e.liedjie2?1:0); }, 0);
+  let h = '<div class="stats">' +
+    '<div class="stat">🌍 <strong>' + countries.size + '</strong> lande</div>' +
+    '<div class="stat">🍽️ <strong>' + kos.length + '</strong> geregte</div>' +
+    '<div class="stat">🥂 <strong>' + drank.length + '</strong> drankies</div>' +
+    '<div class="stat">👥 <strong>' + entries.length + '</strong> gaste</div>' +
+    '<div class="stat">🎵 <strong>' + songs + '</strong> liedjies</div></div>';
+  if (!entries.length) return h + '<div class="empty">🌐 Nog geen reise bygevoeg nie.<br>Kliek op <strong>"Steek Jou Kleim Af"</strong> om te begin!</div>';
   if (kos.length) {
-    h+=`<h2 class="section-h2">🍽️ Geregte</h2><div class="claimed-grid">`;
-    kos.forEach(e=>{ h+=`<div class="chip" onclick="openModal(${entries.indexOf(e)})"><span class="flag">${e.vlag||'🌍'}</span><div class="chip-info"><div class="chip-name">${e.naam}</div><div class="chip-sub">${e.land} · ${e.kosItem}</div></div><span class="badge-kos">🍽️</span></div>`; });
-    h+=`</div>`;
+    h += '<h2 class="section-h2">🍽️ Geregte</h2><div class="claimed-grid">';
+    kos.forEach(function(e) {
+      h += '<div class="chip" onclick="openModal(' + entries.indexOf(e) + ')"><span class="flag">' + (e.vlag||'🌍') + '</span><div class="chip-info"><div class="chip-name">' + e.naam + '</div><div class="chip-sub">' + e.land + ' · ' + e.kosItem + '</div></div><span class="badge-kos">🍽️</span></div>';
+    });
+    h += '</div>';
   }
   if (drank.length) {
-    h+=`<h2 class="section-h2">🥂 Drankies</h2><div class="claimed-grid">`;
-    drank.forEach(e=>{ h+=`<div class="chip" onclick="openModal(${entries.indexOf(e)})"><span class="flag">${e.vlag||'🌍'}</span><div class="chip-info"><div class="chip-name">${e.naam}</div><div class="chip-sub">${e.land} · ${e.drankItem}</div></div><span class="badge-drank">🥂</span></div>`; });
-    h+=`</div>`;
+    h += '<h2 class="section-h2">🥂 Drankies</h2><div class="claimed-grid">';
+    drank.forEach(function(e) {
+      h += '<div class="chip" onclick="openModal(' + entries.indexOf(e) + ')"><span class="flag">' + (e.vlag||'🌍') + '</span><div class="chip-info"><div class="chip-name">' + e.naam + '</div><div class="chip-sub">' + e.land + ' · ' + e.drankItem + '</div></div><span class="badge-drank">🥂</span></div>';
+    });
+    h += '</div>';
   }
   return h;
 }
 
 function renderPassport() {
-  if (!entries.length) return `<div class="empty">📖 Paspoort-boek is nog leeg.</div>`;
-  return `<div class="passport-grid">${entries.map((e,idx)=>{
-    const k=kat(e);
-    const lbl=k==='kos'?'Gereg':k==='drank'?'Drankie':'Gereg & Drankie';
-    const val=k==='beide'?e.kosItem+' & '+e.drankItem:k==='kos'?e.kosItem:e.drankItem;
-    const stamp=k==='kos'?'🍽️':k==='drank'?'🥂':'🍽️🥂';
-    const mem=e.herinnering?`<div class="pcard-memory">"${e.herinnering.length>80?e.herinnering.slice(0,80)+'…':e.herinnering}"</div>`:'';
-    const songs=[e.liedjie1,e.liedjie2].filter(Boolean).map(s=>`<div class="pcard-music">🎵 ${s}</div>`).join('');
-    return `<div class="pcard" onclick="openModal(${idx})">
-      <div class="pcard-head ${k}"><span class="pcard-flag">${e.vlag||'🌍'}</span>
-        <div class="pcard-head-text"><h3>${e.naam}</h3><p>${e.land}${e.jaar?' · '+e.jaar:''}</p></div>
-      </div>
-      <div class="pcard-body"><span class="pcard-label">${lbl}</span><div class="pcard-value">${val}</div>${mem}${songs}</div>
-      <div class="pcard-stamp stamp-${k}">${stamp}</div>
-    </div>`;
-  }).join('')}</div>`;
+  if (!entries.length) return '<div class="empty">📖 Paspoort-boek is nog leeg.</div>';
+  return '<div class="passport-grid">' + entries.map(function(e, idx) {
+    const k = kat(e);
+    const lbl = k==='kos' ? 'Gereg' : k==='drank' ? 'Drankie' : 'Gereg & Drankie';
+    const val = k==='beide' ? e.kosItem + ' & ' + e.drankItem : k==='kos' ? e.kosItem : e.drankItem;
+    const stamp = k==='kos' ? '🍽️' : k==='drank' ? '🥂' : '🍽️🥂';
+    const mem = e.herinnering ? '<div class="pcard-memory">"' + (e.herinnering.length>80 ? e.herinnering.slice(0,80)+'…' : e.herinnering) + '"</div>' : '';
+    const songs = [e.liedjie1, e.liedjie2].filter(Boolean).map(function(s) { return '<div class="pcard-music">🎵 ' + s + '</div>'; }).join('');
+    return '<div class="pcard" onclick="openModal(' + idx + ')">' +
+      '<div class="pcard-head ' + k + '"><span class="pcard-flag">' + (e.vlag||'🌍') + '</span>' +
+      '<div class="pcard-head-text"><h3>' + e.naam + '</h3><p>' + e.land + (e.jaar ? ' · ' + e.jaar : '') + '</p></div></div>' +
+      '<div class="pcard-body"><span class="pcard-label">' + lbl + '</span><div class="pcard-value">' + val + '</div>' + mem + songs + '</div>' +
+      '<div class="pcard-stamp stamp-' + k + '">' + stamp + '</div></div>';
+  }).join('') + '</div>';
 }
 
 function renderMusic() {
-  const tracks=[];
-  entries.forEach(e=>{
-    if(e.liedjie1) tracks.push({naam:e.naam,land:e.land,vlag:e.vlag||'🌍',song:e.liedjie1,artis:e.artis1,url:e.skakel1});
-    if(e.liedjie2) tracks.push({naam:e.naam,land:e.land,vlag:e.vlag||'🌍',song:e.liedjie2,artis:e.artis2,url:e.skakel2});
+  const tracks = [];
+  entries.forEach(function(e) {
+    if (e.liedjie1) tracks.push({naam:e.naam, land:e.land, vlag:e.vlag||'🌍', song:e.liedjie1, artis:e.artis1, url:e.skakel1});
+    if (e.liedjie2) tracks.push({naam:e.naam, land:e.land, vlag:e.vlag||'🌍', song:e.liedjie2, artis:e.artis2, url:e.skakel2});
   });
-  let h=`<p class="music-intro">🎵 Speel elke liedjie wanneer die gas se gereg of drankie voorgestel word!</p>`;
-  if(!tracks.length) return h+`<div class="empty">🎵 Nog geen liedjies nie.</div>`;
-  return h+`<div class="playlist">${tracks.map((t,i)=>{
-    const btn=t.url?musicLink(t.url):`<a href="https://www.youtube.com/results?search_query=${encodeURIComponent(t.song+' '+(t.artis||''))}" target="_blank" class="track-link link-youtube">▶ Soek</a>`;
-    return `<div class="track-row"><span class="track-num">${i+1}.</span><span class="track-flag">${t.vlag}</span>
-      <div class="track-info"><div class="track-song">${t.song}</div>${t.artis?`<div class="track-artist">${t.artis}</div>`:''}<div class="track-guest">${t.naam} · ${t.land}</div></div>
-      <div class="track-links">${btn}</div></div>`;
-  }).join('')}</div>`;
+  let h = '<p class="music-intro">🎵 Speel elke liedjie wanneer die gas se gereg of drankie voorgestel word!</p>';
+  if (!tracks.length) return h + '<div class="empty">🎵 Nog geen liedjies nie.</div>';
+  return h + '<div class="playlist">' + tracks.map(function(t, i) {
+    const btn = t.url ? musicLink(t.url) :
+      '<a href="https://www.youtube.com/results?search_query=' + encodeURIComponent(t.song + ' ' + (t.artis||'')) + '" target="_blank" class="track-link link-youtube">▶ Soek</a>';
+    return '<div class="track-row"><span class="track-num">' + (i+1) + '.</span><span class="track-flag">' + t.vlag + '</span>' +
+      '<div class="track-info"><div class="track-song">' + t.song + '</div>' + (t.artis ? '<div class="track-artist">' + t.artis + '</div>' : '') +
+      '<div class="track-guest">' + t.naam + ' · ' + t.land + '</div></div>' +
+      '<div class="track-links">' + btn + '</div></div>';
+  }).join('') + '</div>';
 }
 
 function renderAdd() {
-  const taken=entries.map(e=>`${e.vlag||'🌍'} ${e.naam} (${e.land})`);
-  const warn=taken.length?`<div class="warning-box"><strong>⚠️ Hierdie bestemmings is al geëis:</strong><div class="taken-list">${taken.map(t=>`<span class="taken-chip">${t}</span>`).join('')}</div></div>`:'';
-  return `
-  <div class="form-title">✚ Steek Jou Kleim Af</div>
-  <div class="form-sub">Een unieke bestemming per persoon / paartjie / gesin — kies gereg en/of drankie</div>
-  ${warn}
-  <div class="field"><label>JOU NAAM (of gesin se name)</label><input id="f-naam" placeholder="bv. Sannie · Kobus & Mia · Die Bothas"></div>
-  <div class="field-row">
-    <div class="field"><label>LAND / BESTEMMING</label><input id="f-land" placeholder="bv. Italië, Japan..."></div>
-    <div class="field"><label>JAAR / GELEENTHEID</label><input id="f-jaar" placeholder="bv. 2019, Wittebrood..."></div>
-  </div>
-  <div class="field"><label>WAT BRING JY? (kies een of beide)</label>
-    <div class="kat-row">
-      <div class="kat-opt"><input type="checkbox" id="k-kos"><label for="k-kos" class="lbl-kos">🍽️ Ek bring 'n Gereg</label></div>
-      <div class="kat-opt"><input type="checkbox" id="k-drank"><label for="k-drank" class="lbl-drank">🥂 Ek bring 'n Drankie</label></div>
-    </div>
-  </div>
-  <div class="field" id="kos-field" style="display:none"><label>NAAM VAN GEREG</label><input id="f-kos" placeholder="bv. Cacio e Pepe, Pad Thai..."></div>
-  <div class="field" id="drank-field" style="display:none"><label>NAAM VAN DRANKIE</label><input id="f-drank" placeholder="bv. Sake, Kir Royale..."></div>
-  <div class="field"><label>JOU REISHERINNERING</label><textarea id="f-herinnering" placeholder="Vertel ons die storie... Waar was jy? Hoekom is dit spesiaal?"></textarea></div>
-  <div class="section-divider">🎵 Musikale Bydraes (opsioneel — tot twee liedjies)</div>
-  <div class="music-pair">
-    <span class="music-pair-title">Liedjie 1</span>
-    <div class="field-row">
-      <div class="field"><label>NAAM VAN LIEDJIE</label><input id="f-liedjie1" placeholder="bv. Volare..."></div>
-      <div class="field"><label>KUNSTENAAR / GROEP</label><input id="f-artis1" placeholder="bv. Dean Martin..."></div>
-    </div>
-    <div class="field"><label>SKAKEL (YouTube / Spotify)</label><input id="f-skakel1" placeholder="https://..."><div class="field-hint">Of los leeg — ons soek dit self op YouTube.</div></div>
-  </div>
-  <div class="music-pair">
-    <span class="music-pair-title">Liedjie 2 (opsioneel)</span>
-    <div class="field-row">
-      <div class="field"><label>NAAM VAN LIEDJIE</label><input id="f-liedjie2" placeholder="bv. Sakura..."></div>
-      <div class="field"><label>KUNSTENAAR / GROEP</label><input id="f-artis2" placeholder="bv. Tradisioneel..."></div>
-    </div>
-    <div class="field"><label>SKAKEL (YouTube / Spotify)</label><input id="f-skakel2" placeholder="https://..."></div>
-  </div>
-  <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">🌍 STEEK JOU KLEIM AF</button>`;
+  const taken = entries.map(function(e) { return (e.vlag||'🌍') + ' ' + e.naam + ' (' + e.land + ')'; });
+  const warnContent = taken.length
+    ? '<strong style="display:block;margin-bottom:4px;color:#fcb045">⚠️ Hierdie bestemmings is al geëis:</strong><div class="taken-list">' +
+      taken.map(function(t) { return '<span class="taken-chip">' + t + '</span>'; }).join('') + '</div>'
+    : '';
+  return '<div class="form-title">✚ Steek Jou Kleim Af</div>' +
+    '<div class="form-sub">Een unieke bestemming per persoon / paartjie / gesin — kies gereg en/of drankie</div>' +
+    '<div id="warn-box" class="warning-box" style="' + (taken.length ? '' : 'display:none') + '">' + warnContent + '</div>' +
+    '<div class="field"><label>JOU NAAM (of gesin se name)</label><input id="f-naam" placeholder="bv. Sannie · Kobus & Mia · Die Bothas"></div>' +
+    '<div class="field-row"><div class="field"><label>LAND / BESTEMMING</label><input id="f-land" placeholder="bv. Italië, Japan..."></div>' +
+    '<div class="field"><label>JAAR / GELEENTHEID</label><input id="f-jaar" placeholder="bv. 2019, Wittebrood..."></div></div>' +
+    '<div class="field"><label>WAT BRING JY? (kies een of beide)</label>' +
+    '<div class="kat-row"><div class="kat-opt"><input type="checkbox" id="k-kos"><label for="k-kos" class="lbl-kos">🍽️ Ek bring \'n Gereg</label></div>' +
+    '<div class="kat-opt"><input type="checkbox" id="k-drank"><label for="k-drank" class="lbl-drank">🥂 Ek bring \'n Drankie</label></div></div></div>' +
+    '<div class="field" id="kos-field" style="display:none"><label>NAAM VAN GEREG</label><input id="f-kos" placeholder="bv. Cacio e Pepe, Pad Thai..."></div>' +
+    '<div class="field" id="drank-field" style="display:none"><label>NAAM VAN DRANKIE</label><input id="f-drank" placeholder="bv. Sake, Kir Royale..."></div>' +
+    '<div class="field"><label>JOU REISHERINNERING</label><textarea id="f-herinnering" placeholder="Vertel ons die storie... Waar was jy? Hoekom is dit spesiaal?"></textarea></div>' +
+    '<div class="section-divider">🎵 Musikale Bydraes (opsioneel)</div>' +
+    '<div class="music-pair"><span class="music-pair-title">Liedjie 1</span>' +
+    '<div class="field-row"><div class="field"><label>NAAM VAN LIEDJIE</label><input id="f-liedjie1" placeholder="bv. Volare..."></div>' +
+    '<div class="field"><label>KUNSTENAAR / GROEP</label><input id="f-artis1" placeholder="bv. Dean Martin..."></div></div>' +
+    '<div class="field"><label>SKAKEL (YouTube / Spotify)</label><input id="f-skakel1" placeholder="https://..."><div class="field-hint">Of los leeg — ons soek dit self op YouTube.</div></div></div>' +
+    '<div class="music-pair"><span class="music-pair-title">Liedjie 2 (opsioneel)</span>' +
+    '<div class="field-row"><div class="field"><label>NAAM VAN LIEDJIE</label><input id="f-liedjie2" placeholder="bv. Sakura..."></div>' +
+    '<div class="field"><label>KUNSTENAAR / GROEP</label><input id="f-artis2" placeholder="bv. Tradisioneel..."></div></div>' +
+    '<div class="field"><label>SKAKEL (YouTube / Spotify)</label><input id="f-skakel2" placeholder="https://..."></div></div>' +
+    '<button class="submit-btn" id="submit-btn" onclick="handleSubmit()">🌍 STEEK JOU KLEIM AF</button>';
 }
 
 document.addEventListener('change', function(ev) {
-  if(ev.target&&(ev.target.id==='k-kos'||ev.target.id==='k-drank')) {
-    const kf=document.getElementById('kos-field');
-    const df=document.getElementById('drank-field');
-    if(kf) kf.style.display=document.getElementById('k-kos')?.checked?'':'none';
-    if(df) df.style.display=document.getElementById('k-drank')?.checked?'':'none';
+  if (ev.target && (ev.target.id === 'k-kos' || ev.target.id === 'k-drank')) {
+    const kf = document.getElementById('kos-field');
+    const df = document.getElementById('drank-field');
+    if (kf) kf.style.display = document.getElementById('k-kos').checked ? '' : 'none';
+    if (df) df.style.display = document.getElementById('k-drank').checked ? '' : 'none';
   }
 });
 
 async function handleSubmit() {
-  const naam=(document.getElementById('f-naam')?.value||'').trim();
-  const land=(document.getElementById('f-land')?.value||'').trim();
-  const jaar=(document.getElementById('f-jaar')?.value||'').trim();
-  const bringKos=document.getElementById('k-kos')?.checked;
-  const bringDrank=document.getElementById('k-drank')?.checked;
-  const kosItem=(document.getElementById('f-kos')?.value||'').trim();
-  const drankItem=(document.getElementById('f-drank')?.value||'').trim();
-  const herinnering=(document.getElementById('f-herinnering')?.value||'').trim();
-  const liedjie1=(document.getElementById('f-liedjie1')?.value||'').trim();
-  const artis1=(document.getElementById('f-artis1')?.value||'').trim();
-  const skakel1=(document.getElementById('f-skakel1')?.value||'').trim();
-  const liedjie2=(document.getElementById('f-liedjie2')?.value||'').trim();
-  const artis2=(document.getElementById('f-artis2')?.value||'').trim();
-  const skakel2=(document.getElementById('f-skakel2')?.value||'').trim();
+  const naam = (document.getElementById('f-naam')?.value||'').trim();
+  const land = (document.getElementById('f-land')?.value||'').trim();
+  const jaar = (document.getElementById('f-jaar')?.value||'').trim();
+  const bringKos = document.getElementById('k-kos')?.checked;
+  const bringDrank = document.getElementById('k-drank')?.checked;
+  const kosItem = (document.getElementById('f-kos')?.value||'').trim();
+  const drankItem = (document.getElementById('f-drank')?.value||'').trim();
+  const herinnering = (document.getElementById('f-herinnering')?.value||'').trim();
+  const liedjie1 = (document.getElementById('f-liedjie1')?.value||'').trim();
+  const artis1 = (document.getElementById('f-artis1')?.value||'').trim();
+  const skakel1 = (document.getElementById('f-skakel1')?.value||'').trim();
+  const liedjie2 = (document.getElementById('f-liedjie2')?.value||'').trim();
+  const artis2 = (document.getElementById('f-artis2')?.value||'').trim();
+  const skakel2 = (document.getElementById('f-skakel2')?.value||'').trim();
 
-  if(!naam||!land){showToast('⚠️ Vul jou naam en land in.');return;}
-  if(!bringKos&&!bringDrank){showToast("⚠️ Kies ten minste 'n gereg of drankie.");return;}
-  if(bringKos&&!kosItem){showToast('⚠️ Wat is die naam van jou gereg?');return;}
-  if(bringDrank&&!drankItem){showToast('⚠️ Wat is die naam van jou drankie?');return;}
-  if(entries.some(e=>e.land.toLowerCase()===land.toLowerCase())){showToast(`❌ ${land} is al geëis!`);return;}
+  if (!naam||!land) { showToast('⚠️ Vul jou naam en land in.'); return; }
+  if (!bringKos&&!bringDrank) { showToast("⚠️ Kies ten minste 'n gereg of drankie."); return; }
+  if (bringKos&&!kosItem) { showToast('⚠️ Wat is die naam van jou gereg?'); return; }
+  if (bringDrank&&!drankItem) { showToast('⚠️ Wat is die naam van jou drankie?'); return; }
+  if (entries.some(function(e) { return e.land.toLowerCase() === land.toLowerCase(); })) {
+    showToast('❌ ' + land + ' is al geëis!'); return;
+  }
 
-  const btn=document.getElementById('submit-btn');
-  btn.disabled=true;
-  btn.textContent='⏳ Besig om te stoor...';
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Besig om te stoor...';
 
-  try{
-    await saveEntry({naam,land,jaar,vlag:'🌍',kosItem:bringKos?kosItem:'',drankItem:bringDrank?drankItem:'',herinnering,liedjie1,artis1,skakel1,liedjie2,artis2,skakel2});
+  try {
+    await saveEntry({naam:naam, land:land, jaar:jaar, vlag:'🌍', kosItem:bringKos?kosItem:'', drankItem:bringDrank?drankItem:'', herinnering:herinnering, liedjie1:liedjie1, artis1:artis1, skakel1:skakel1, liedjie2:liedjie2, artis2:artis2, skakel2:skakel2});
     await loadEntries();
     showToast('✅ Kleim gesteek! Baie dankie!');
     showTab('passport');
-  }catch(err){
-    showToast('⚠️ Fout: '+err.message);
-    btn.disabled=false;
-    btn.textContent='🌍 STEEK JOU KLEIM AF';
+  } catch(err) {
+    showToast('⚠️ Fout: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '🌍 STEEK JOU KLEIM AF';
   }
 }
 
 loadEntries();
-setInterval(() => loadEntries(true), 15000);
+setInterval(loadEntries, 15000);
+
 </script>
 </body>
 </html>
