@@ -1,5 +1,4 @@
 const express = require('express');
-const { google } = require('googleapis');
 const cors = require('cors');
 const app = express();
 
@@ -8,30 +7,22 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const SHEET_ID = '1UMBAu-pjebifQEEjpvXlLzlgTleEUUNGfcm_FquCNHg';
-const SHEET_NAME = 'Linette se 56e verjaarsdag';
-const HEADERS = ['naam','land','jaar','vlag','kosItem','drankItem','herinnering','liedjie1','artis1','skakel1','liedjie2','artis2','skakel2'];
-
-async function getSheets() {
-  const auth = new google.auth.GoogleAuth({
-    credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-  });
-  return google.sheets({ version: 'v4', auth });
-}
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzh6hdqOQBaoJdIi60-RxZsQrKFFNQyipDGTLuiT8JHCD5y4ygw8IkTMYZ4x6-LR7ChsQ/exec';
 
 app.get('/api/entries', async (req, res) => {
   try {
-    const sheets = await getSheets();
-    const r = await sheets.spreadsheets.values.get({
-      spreadsheetId: SHEET_ID,
-      range: SHEET_NAME,
-    });
-    const rows = r.data.values || [];
-    if (rows.length <= 1) return res.json([]);
-    const headers = rows[0];
-    const entries = rows.slice(1).map(row => {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Linette%20se%2056e%20verjaarsdag`;
+    const r = await fetch(url);
+    const csv = await r.text();
+    const lines = csv.trim().split('\n');
+    if (lines.length <= 1) return res.json([]);
+    const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
+    const entries = lines.slice(1).map(line => {
+      const values = line.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g) || [];
       const obj = {};
-      headers.forEach((h, i) => obj[h] = row[i] || '');
+      headers.forEach((h, i) => {
+        obj[h] = (values[i] || '').replace(/^"|"$/g, '').trim();
+      });
       return obj;
     });
     res.json(entries);
@@ -43,28 +34,14 @@ app.get('/api/entries', async (req, res) => {
 
 app.post('/api/entries', async (req, res) => {
   try {
-    const sheets = await getSheets();
     const entry = req.body;
-    const existing = await sheets.spreadsheets.values.get({
-      spreadsheetId: SHEET_ID,
-      range: SHEET_NAME,
+    const params = new URLSearchParams({
+      action: 'set',
+      data: JSON.stringify(entry)
     });
-    const rows = existing.data.values || [];
-    if (rows.length === 0) {
-      await sheets.spreadsheets.values.append({
-        spreadsheetId: SHEET_ID,
-        range: SHEET_NAME,
-        valueInputOption: 'RAW',
-        resource: { values: [HEADERS] },
-      });
-    }
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: SHEET_ID,
-      range: SHEET_NAME,
-      valueInputOption: 'RAW',
-      resource: { values: [HEADERS.map(h => entry[h] || '')] },
-    });
-    res.json({ status: 'ok' });
+    const r = await fetch(APPS_SCRIPT_URL + '?' + params.toString());
+    const result = await r.json();
+    res.json(result);
   } catch(e) {
     console.error(e);
     res.status(500).json({ error: e.message });
