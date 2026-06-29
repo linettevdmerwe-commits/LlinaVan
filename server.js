@@ -1,37 +1,34 @@
 const express = require('express');
 const cors = require('cors');
+const { Pool } = require('pg');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-const SHEET_ID = '1UMBAu-pjebifQEEjpvXlLzlgTleEUUNGfcm_FquCNHg';
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwuAvoUssscWOrloauaSvau85YN4AIGytdqn-aGktGds7PpDrZfHZD15u07UxxubAiDow/exec';
-const SHEET_NAME = 'Linette se 56e verjaarsdag';
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
+
+async function init() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS entries (
+      id SERIAL PRIMARY KEY,
+      naam TEXT, land TEXT, jaar TEXT, vlag TEXT,
+      "kosItem" TEXT, "drankItem" TEXT, herinnering TEXT,
+      liedjie1 TEXT, artis1 TEXT, skakel1 TEXT,
+      liedjie2 TEXT, artis2 TEXT, skakel2 TEXT,
+      created_at TIMESTAMP DEFAULT NOW()
+    )
+  `);
+}
 
 app.get('/api/entries', async (req, res) => {
   try {
-    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
-    const r = await fetch(url);
-    const csv = await r.text();
-    const lines = csv.trim().split('\n');
-    if (lines.length <= 1) return res.json([]);
-    const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
-    const entries = lines.slice(1).map(line => {
-      const values = [];
-      let cur = '', inQ = false;
-      for (let i = 0; i < line.length; i++) {
-        if (line[i] === '"') { inQ = !inQ; }
-        else if (line[i] === ',' && !inQ) { values.push(cur); cur = ''; }
-        else { cur += line[i]; }
-      }
-      values.push(cur);
-      const obj = {};
-      headers.forEach((h, i) => { obj[h] = (values[i] || '').trim(); });
-      return obj;
-    });
-    res.json(entries);
+    const r = await pool.query('SELECT * FROM entries ORDER BY created_at ASC');
+    res.json(r.rows);
   } catch(e) {
     console.error('GET error:', e.message);
     res.status(500).json({ error: e.message });
@@ -40,19 +37,14 @@ app.get('/api/entries', async (req, res) => {
 
 app.post('/api/entries', async (req, res) => {
   try {
-    const entry = req.body;
-    const params = new URLSearchParams({
-      action: 'set',
-      data: JSON.stringify(entry)
-    });
-    const url = SCRIPT_URL + '?' + params.toString();
-    const r = await fetch(url, { redirect: 'follow' });
-    const text = await r.text();
-    console.log('Apps Script response:', text.substring(0, 300));
-    let result;
-    try { result = JSON.parse(text); }
-    catch(e) { result = { status: 'ok' }; }
-    res.json(result);
+    const e = req.body;
+    await pool.query(
+      `INSERT INTO entries (naam, land, jaar, vlag, "kosItem", "drankItem", herinnering, liedjie1, artis1, skakel1, liedjie2, artis2, skakel2)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)`,
+      [e.naam, e.land, e.jaar, e.vlag, e.kosItem, e.drankItem, e.herinnering,
+       e.liedjie1, e.artis1, e.skakel1, e.liedjie2, e.artis2, e.skakel2]
+    );
+    res.json({ status: 'ok' });
   } catch(e) {
     console.error('POST error:', e.message);
     res.status(500).json({ error: e.message });
@@ -60,4 +52,6 @@ app.post('/api/entries', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Server running on port ' + PORT));
+init().then(() => {
+  app.listen(PORT, () => console.log('Server running on port ' + PORT));
+});
