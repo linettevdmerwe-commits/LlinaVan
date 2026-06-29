@@ -23,6 +23,7 @@ async function init() {
       created_at TIMESTAMP DEFAULT NOW()
     )
   `);
+  console.log('Database ready');
 }
 
 app.get('/api/entries', async (req, res) => {
@@ -54,4 +55,7 @@ app.post('/api/entries', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 init().then(() => {
   app.listen(PORT, () => console.log('Server running on port ' + PORT));
+}).catch(err => {
+  console.error('Init failed:', err.message);
+  process.exit(1);
 });
